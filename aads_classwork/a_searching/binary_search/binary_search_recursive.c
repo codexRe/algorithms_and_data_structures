@@ -36,7 +36,7 @@ void main(){
     endl;
 
     printf("Enter Space Separated Array Elements in SORTED (ASC) Order: ");
-    int arr[n], i = 0, target = -1;
+    int arr[MAX], i = 0, target = -1;
     for (i; i < n; i++){
         scanf("%d", arr + i);
     }
