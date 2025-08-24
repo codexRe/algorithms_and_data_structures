@@ -40,6 +40,7 @@ int linear_search(int *arr, int start, int end, int target){
 
 node* preorder(int* inorder, int* postorder, int in_start, int in_end, int post_start, int post_end){
     if (in_start > in_end || post_start >  post_end){
+        cout << "null" << endl;
         return nullptr;
     }
     node* root = new node(postorder[post_end]);
@@ -56,7 +57,9 @@ node* preorder(int* inorder, int* postorder, int in_start, int in_end, int post_
 int main(){
     // int postorder[] = {7, 9, 8, 11, 13, 12, 10};
     // int inorder[] = {7, 8, 9, 10, 11, 12, 13};
-    int postorder[] = {9, 15, 7, 20, 3};
-    int inorder[] = {9, 3, 15, 20, 7};
-    preorder(inorder, postorder, 0, 4, 0, 4);
+    int postorder[] = {9, 18, 12, 10};
+    int inorder[] = {9, 18, 10, 12};
+
+    int n = sizeof(inorder)/sizeof(int);
+    preorder(inorder, postorder, 0, n-1, 0, n-1); // 0 to n-1 | total = n
 }
