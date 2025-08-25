@@ -15,10 +15,7 @@ class node{
 };
 
 int max(int a, int b){
-    if(a > b){
-        return a;
-    }
-    return b;
+    return (a>b) ? a : b;
 }
 
 // height of tree and level order traversal(bfs), but with overhead ["level" variable]
