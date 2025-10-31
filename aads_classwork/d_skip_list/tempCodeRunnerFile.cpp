@@ -1,0 +1,1 @@
+cout << coinFlip(0.5, 16) << endl;

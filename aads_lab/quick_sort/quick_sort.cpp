@@ -8,14 +8,15 @@ void swap(int* a, int* b){
     *b = temp;
 }
 
-int partition(int* arr, int low, int high){ // Horae's Partition
+// Naive partition is stable but other two aren't, but other two are efficient
+
+int partition(int* arr, int low, int high){ // Hoare's Partition - most efficient
     int x = arr[low];
     int i = low;
 
     for (int j = low + 1; j <= high; j++) {
         if (arr[j] <= x){  // flipping this sign will change the order(ascending: <= /descending: >=) of output
-            i++;
-            swap(arr + i, arr + j);
+            swap(arr + ++i, arr + j);
         }
     }
     swap (arr + low, arr + i);
