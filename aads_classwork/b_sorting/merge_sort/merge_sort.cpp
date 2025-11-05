@@ -43,13 +43,28 @@ void merge_sort(int* arr, int start, int end){
 }
 
 int main(){
-    int arr[] = {19, 8, 3, 24, 5, 6, 2, 12, 34, 5, 665};
-    int n = sizeof(arr)/sizeof(int);
+    int n = 0;
+    cout << "Enter number of elements: ";
+    cin >> n;
+    cout << endl;
+    int arr[n] = {};
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    int high = sizeof(arr) / sizeof(arr[0]); // Simply, size of array = #elements
 
-    merge_sort(arr, 0, n-1);
-    newline
-    for (int i = 0; i < n; i++)
+    cout << "Original Array : ";
+    for(int i = 0; i < high; i++){
         cout << arr[i] << " ";
-    newline
+    }
+    cout << '\n';
+
+    merge_sort(arr, 0, high-1);
+    
+    cout << "After sorting  : ";
+    for(int i = 0; i < high; i++){
+        cout << arr[i] << " ";
+    }
+    cout << '\n';
     return 0;
 }

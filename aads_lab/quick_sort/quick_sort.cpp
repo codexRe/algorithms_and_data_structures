@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -23,6 +23,13 @@ int partition(int* arr, int low, int high){ // Hoare's Partition - most efficien
     return i;
 }
 
+int random_partition(int* arr, int low, int high){
+    srand(time(NULL));
+    int random = low + rand() % (high - low);
+    swap(arr[random], arr[low]);
+    return partition(arr, low, high);
+}
+
 // int partition(int* arr, int low, int high) { // commonly used one (from internet): Lomuto’s Partition
 //     int pivot = arr[high];
 //     int i = low - 1;
@@ -39,14 +46,21 @@ int partition(int* arr, int low, int high){ // Hoare's Partition - most efficien
 
 void quicksort(int* arr, int low, int high){
     if(low < high){
-        int i = partition(arr, low, high); // 'i' is pivot element
+        int i = random_partition(arr, low, high); // 'i' is pivot element
         quicksort(arr, low, i-1);
         quicksort(arr, i+1, high);
     }
 }
  
 int main(){
-    int arr[] = {9, 6, 19, 2, 3, 0, -1, 8, -12, -1}; // Static Array
+    int n = 0;
+    cout << "Enter number of elements: ";
+    cin >> n;
+    cout << endl;
+    int arr[n] = {};
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
     int high = sizeof(arr) / sizeof(arr[0]); // Simply, size of array = #elements
 
     cout << "Original Array : ";

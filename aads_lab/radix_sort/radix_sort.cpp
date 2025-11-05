@@ -33,12 +33,17 @@ void radix_sort(int* arr, int n){
 }
 
 int main(){
-
-    int arr[]= {0, 1, 123, 1342, 312, 440, 21, 349, 1290, 32};
-    int n = sizeof(arr) / sizeof(int);
+    int n = 0;
+    cout << "Enter number of elements: ";
+    cin >> n;
+    cout << endl << "Input: ";
+    int arr[n] = {};
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
     radix_sort(arr, n);
-
-    for(int i = 0; i < 10; i++)
+    cout << "After Sorting: ";
+    for(int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << "\n\n";
     return 0;

@@ -109,7 +109,7 @@ int main(){
         cin >> arr[i];
     }
 
-    cout << "Array elements: ";
+    cout << "\nArray elements: ";
     print_array(arr, n);
 
     // Validation
@@ -124,7 +124,7 @@ int main(){
     }
     if (!valid) return 1;
 
-    cout << "After sorting: ";
+    cout << "\nAfter sorting: ";
     bucket_sort(arr, n);
 
     return 0;

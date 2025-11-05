@@ -1,0 +1,1 @@
+printf("Enter space separated array elements: ");

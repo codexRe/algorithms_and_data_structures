@@ -12,26 +12,25 @@ void linear_search(int* arr, int target, int length){
             break; // If you want to search all appearance of target element then remove break
         }
     if (!x){
-        printf("Element Not Found!");
-        endl;
+        printf("Element Not Found!\n");
     }
 }
 
 void main(){
     int n;
-    printf("\nEnter Array Length (MAX=10000): ");
+    printf("\nLinear Search\n\nEnter Array Length: ");
     scanf("%d", &n);
-    endl;
+    printf("\n");
 
     int arr[n], i = 0, target = -1;
+    printf("Enter space separated array elements: ");
     for (i; i < n; i++){
-        printf("Enter Array Element (index = %d): ", i);
         scanf("%d", arr + i);
     }
 
     printf("\nEnter search target: ");
     scanf("%d", &target);
-    endl;
+    printf("\n");
 
     linear_search(arr, target, n);
 }
