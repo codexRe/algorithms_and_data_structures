@@ -3,7 +3,7 @@ using namespace std;
 
 void addEdge(vector<vector<int>>* adj, int u, int v, int w) { // directed graph
         adj[u].push_back({v, w});
-    }
+}
 
 vector <int> dijkstra(int V, vector<vector<int>> adj[], int S){
     // Create a set ds for storing the nodes as a pair {dist,node}
@@ -22,10 +22,10 @@ vector <int> dijkstra(int V, vector<vector<int>> adj[], int S){
     // Now, erase the minimum distance node first from the set
     // and traverse for all its adjacent nodes.
     while(!shortest.empty()) {
-        auto it = *(shortest.begin()); 
-        int node = it.second; 
-        int dis = it.first; 
-        shortest.erase(it); 
+        auto j = *(shortest.begin()); 
+        int node = j.second; 
+        int dis = j.first; 
+        shortest.erase(j); 
         
         // Check for all adjacent nodes of the erased
         // element whether the prev dist is larger than current or not.
